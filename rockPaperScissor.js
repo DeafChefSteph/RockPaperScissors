@@ -1,5 +1,12 @@
 
 function computerPlay() {
+/*
+This function generates a random float number between 0 and 3. 
+If the generated number is below 1 the function returns Rock
+If the generated number is between 1 and 2 the function returns Paper
+If the generated number is over 2 the function returns Scissor
+*/ 
+
     let chance = Math.random()*3;
     let computerChoice;
     if(chance < 1) computerChoice = "Rock";
@@ -12,6 +19,12 @@ function computerPlay() {
 
 
 function playRound(playerSelection, computerSelection){
+/*
+This function plays a round of rock, paper, scissor. 
+To avoid case sensitive problems everything is converted to lower Case
+playSelection and computerSelection are Strings 
+ */
+
   
   let output;
   playerSelection = playerSelection.toLowerCase();
@@ -32,7 +45,14 @@ function playRound(playerSelection, computerSelection){
 
   return output; 
 }
+
+
 function game(){
+    /*
+Plays 5 games of Rock, Paper, Scissor and records the results with the
+String function include    
+    */ 
+    
     let userSel;
     let compSel;
     let erg;
