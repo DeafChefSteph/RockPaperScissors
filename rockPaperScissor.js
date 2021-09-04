@@ -69,8 +69,7 @@ String function include
     //console.log("Player Selction:" + userSel);
     erg = playRound(userSel,compSel);
     
-    if (erg.includes("loses")) winsOfComputer++;
-    else if(erg.includes("wins")) winsOfPlayer++;
+
     
     console.log(erg);
     
@@ -84,7 +83,35 @@ String function include
     else console.log("Tie");
 }
 
-game();
+//game();
+
+const buttons = document.querySelectorAll('button');
+const resultContainer = document.querySelector('#showResult');
+let winsPlayer = 0, winsComputer = 0;
+
+
+
+
+buttons.forEach((button)=>{
+    button.addEventListener('click',()=>{ 
+         let erg = playRound(button.id,computerPlay());
+
+         if (erg.includes("loses")) winsComputer++;
+         else if(erg.includes("wins")) winsPlayer++;
+
+        const resultParagraph = document.createElement('p');
+        resultParagraph.textContent = erg + "\t\tcurrent standings:"
+        +winsPlayer+" - "+winsComputer;
+        resultContainer.appendChild(resultParagraph);
+        if(winsPlayer >= 5 || winsComputer >= 5) return;
+         
+         //resultParagraph.classList.add('resultParagraph');
+         //alert(erg);
+         
+    });
+});
+
+
 
 
     
