@@ -1,0 +1,71 @@
+.playingUI{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.playField{
+    background-color: seagreen;
+    width: 50%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+button{
+  width: 33%;
+}
+
+.computerPlaying{
+    background-color: red;
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.computerPlaying img{
+
+    width: 100px;
+   height: 200px;
+}
+.computerPlaying img{
+    background-color: gray;
+    width: 33%;
+}
+    .computerChoice{
+    transition: 1s;
+    background-color: rgb(113, 92, 205) !important;
+    
+}
+h3{
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+#showResult{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+p{
+    font-size: 40px;
+    
+}
+
+.results{
+    background-color: seagreen;
+    width: 50%;
+    
+    height: 300px;
+    text-align: center;
+}
+.standings{
+    background-color: red;
+    width: 50%;
+    height: 300px;
+    text-align: center;
+}

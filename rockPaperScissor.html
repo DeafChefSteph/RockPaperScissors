@@ -2,19 +2,42 @@
 <html>
     <head>
         <script src="rockPaperScissor.js" defer></script>
+        <link rel="stylesheet" href="rockPaperScissor.css">
+        <title>Rock Paper Scissor</title>
     </head>
     <body>
         <h1>Rock Paper Scissor</h1>
-        <h2>Spiel User Interface</h2>
+        
 
         <div class="playingUI">
-                <button id="rock">Rock</button>
-                <button id="paper">Paper</button>
-                <button id="scissor">Scissor</button>
+            
+            <div class="playField">
+                <h3>Player</h3>
+                <button id="rock"><img src="https://img.icons8.com/ios/100/000000/hand-rock.png"/></button>
+                <button id="paper"><img src="https://img.icons8.com/ios/100/000000/hand.png"/></button>
+                <button id="scissor"><img src="https://img.icons8.com/ios/100/000000/hand-scissors--v1.png"/></button>
+            </div>
+
+                <div class="computerPlaying">
+                    <h3>Computer</h3>
+                    <img src="https://img.icons8.com/ios/100/000000/hand-rock.png" 
+                    id="img_rock"/>
+                    <img src="https://img.icons8.com/ios/100/000000/hand.png" 
+                    id="img_paper"/>
+                    <img src="https://img.icons8.com/ios/100/000000/hand-scissors--v1.png" 
+                    id="img_scissor"/>
+                </div>
         </div>
 
+     
+
     <div id= "showResult">
-            <h2 id="resultHeading">Ergebnisse</h2>
+        <div class="results">
+            <h3 id="resultHeader">Results</h3>
+        </div>
+        <div class="standings">
+            <h3 id="standingsHeader">Standings</h3>
+        </div>   
     </div>
     </body>
 </html>

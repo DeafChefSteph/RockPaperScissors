@@ -83,28 +83,52 @@ String function include
     else console.log("Tie");
 }
 
+
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('computerChoice');
+  }
+
 //game();
 
 const buttons = document.querySelectorAll('button');
-const resultContainer = document.querySelector('#showResult');
+const resultContainer = document.querySelector('.results');
+const standingsContainer =document.querySelector('.standings')
+
+const img_rock = document.querySelector('#img_rock');
+const img_paper = document.querySelector('#img_paper');
+const img_scissor = document.querySelector('#img_scissor');
+
+const resultParagraph = document.createElement('p');
+const standingsParagraph = document.createElement('p');
 let winsPlayer = 0, winsComputer = 0;
-
-
 
 
 buttons.forEach((button)=>{
     button.addEventListener('click',()=>{ 
-         let erg = playRound(button.id,computerPlay());
+         let computerP = computerPlay();
+         
+         if (computerP == "Rock") img_rock.classList.add('computerChoice');
+         else if(computerP == "Paper") img_paper.classList.add('computerChoice');
+         else if(computerP == "Scissor") img_scissor.classList.add('computerChoice');
+         let erg = playRound(button.id,computerP);
 
          if (erg.includes("loses")) winsComputer++;
          else if(erg.includes("wins")) winsPlayer++;
 
-        const resultParagraph = document.createElement('p');
-        resultParagraph.textContent = erg + "\t\tcurrent standings:"
-        +winsPlayer+" - "+winsComputer;
+        
+        resultParagraph.textContent = erg;
+        standingsParagraph.textContent = winsPlayer + ":" +winsComputer;
         resultContainer.appendChild(resultParagraph);
-        if(winsPlayer >= 5 || winsComputer >= 5) return;
-         
+        standingsContainer.appendChild(standingsParagraph);
+
+        if(winsPlayer >= 5 || winsComputer >= 5) {alert("somebody won"); location.reload();}
+
+        setTimeout(function(){ 
+            img_rock.classList.remove('computerChoice');
+            img_paper.classList.remove('computerChoice');
+            img_scissor.classList.remove('computerChoice');
+         }, 1000);
          //resultParagraph.classList.add('resultParagraph');
          //alert(erg);
          
